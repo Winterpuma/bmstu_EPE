@@ -6,7 +6,139 @@
         xmlns:local="clr-namespace:COCOMO_var1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
-    </Grid>
+	<Grid x:Name="BasicGrid" ShowGridLines="True">
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="233*" />
+			<ColumnDefinition Width="Auto" MinWidth="111" />
+			<ColumnDefinition Width="456*" />
+		</Grid.ColumnDefinitions>
+
+		<Canvas Grid.Column="2" Grid.Row="0" Background="LightGreen">
+			<TextBlock>Правая панель</TextBlock>
+		</Canvas>
+
+		<Grid x:Name="Attributes">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<GroupBox Header="Атрибуты программного продукта" Grid.Column="0" Grid.Row="0" >
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">RELY</TextBlock>
+					<TextBox x:Name="RELY" Grid.Row="0" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">DATA</TextBlock>
+					<TextBox x:Name="DATA" Grid.Row="1" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">CPLX</TextBlock>
+					<TextBox x:Name="CPLX" Grid.Row="2" Grid.Column="1">1</TextBox>
+
+				</Grid>
+			</GroupBox>
+
+			<GroupBox Header="Атрибуты компьютера" Grid.Column="0" Grid.Row="1">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">TIME</TextBlock>
+					<TextBox x:Name="TIME" Grid.Row="0" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">STOR</TextBlock>
+					<TextBox x:Name="STOR" Grid.Row="1" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">VIRT</TextBlock>
+					<TextBox x:Name="VIRT" Grid.Row="2" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="3" Grid.Column="0">TURN</TextBlock>
+					<TextBox x:Name="TURN" Grid.Row="3" Grid.Column="1">1</TextBox>
+
+				</Grid>
+			</GroupBox>
+
+			<GroupBox Header="Атрибуты персонала" Grid.Column="0" Grid.Row="2">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">ACAP</TextBlock>
+					<TextBox x:Name="ACAP" Grid.Row="0" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">AEXP</TextBlock>
+					<TextBox x:Name="AEXP" Grid.Row="1" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">PCAP</TextBlock>
+					<TextBox x:Name="PCAP" Grid.Row="2" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="3" Grid.Column="0">VEXP</TextBlock>
+					<TextBox x:Name="VEXP" Grid.Row="3" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="4" Grid.Column="0">LEXP</TextBlock>
+					<TextBox x:Name="LEXP" Grid.Row="4" Grid.Column="1">1</TextBox>
+
+				</Grid>
+			</GroupBox>
+
+			<GroupBox Header="Атрибуты проекта" Grid.Column="0" Grid.Row="3">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">MODP</TextBlock>
+					<TextBox x:Name="MODP" Grid.Row="0" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">TOOL</TextBlock>
+					<TextBox x:Name="TOOL" Grid.Row="1" Grid.Column="1">1</TextBox>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">SCED</TextBlock>
+					<TextBox x:Name="SCED" Grid.Row="2" Grid.Column="1">1</TextBox>
+
+				</Grid>
+			</GroupBox>
+		</Grid>
+	</Grid>
+
 </Window>
