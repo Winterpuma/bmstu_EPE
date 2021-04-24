@@ -11,13 +11,11 @@
 
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition MinWidth="300" />
-			<ColumnDefinition Width="Auto" MinWidth="111" />
-			<ColumnDefinition Width="456*" />
+			<ColumnDefinition MinWidth="20" />
+			<ColumnDefinition Width="Auto" MinWidth="400" />
+			<ColumnDefinition Width="46*" />
 		</Grid.ColumnDefinitions>
 
-		<Canvas Grid.Column="2" Grid.Row="0" Background="LightGreen">
-			<TextBlock>Правая панель</TextBlock>
-		</Canvas>
 
 		<Grid x:Name="Attributes">
 			<Grid.RowDefinitions>
@@ -162,6 +160,86 @@
 
 			<Button Margin="0 5 0 0" Grid.Row="5" Grid.Column="0" Click="Button_Click" Content="Оценить" Width="Auto" />
 		</Grid>
+
+		<Grid x:Name="Results" Grid.Column="2" Grid.Row="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="2*"/>
+			</Grid.RowDefinitions>
+
+			<GroupBox Header="Декомпозиция работ по созданию ПО" Grid.Column="0" Grid.Row="0" >
+				<Grid Margin="1 5">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">Вид деятельности</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="2">Бюджет (%)</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="4">Значение</TextBlock>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">Анализ требований</TextBlock>
+					<TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">4</TextBlock>
+					<TextBlock x:Name="DecAnalysisWork" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">Проектирование продукта</TextBlock>
+					<TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">12</TextBlock>
+					<TextBlock x:Name="DecProjectingWork" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="3" Grid.Column="0">Программирование</TextBlock>
+					<TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">44</TextBlock>
+					<TextBlock x:Name="DecProgrammingWork" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="4" Grid.Column="0">Тестирование</TextBlock>
+					<TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">6</TextBlock>
+					<TextBlock x:Name="DecTestingWork" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="5" Grid.Column="0">Верификация и аттестация</TextBlock>
+					<TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center">14</TextBlock>
+					<TextBlock x:Name="DecVerificationWork" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="6" Grid.Column="0">Канцелярия проекта</TextBlock>
+					<TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">7</TextBlock>
+					<TextBlock x:Name="DecChancelleryWork" Grid.Row="6" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="7" Grid.Column="0">Управление конфигурацией и QA</TextBlock>
+					<TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Center">7</TextBlock>
+					<TextBlock x:Name="DecQaWork" Grid.Row="7" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="8" Grid.Column="0">Создание руководств</TextBlock>
+					<TextBlock Grid.Row="8" Grid.Column="2" HorizontalAlignment="Center">6</TextBlock>
+					<TextBlock x:Name="DecManualWork" Grid.Row="8" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+
+					<TextBlock Grid.Row="9" Grid.Column="0">Итого</TextBlock>
+					<TextBlock Grid.Row="9" Grid.Column="2" HorizontalAlignment="Center">100</TextBlock>
+					<TextBlock x:Name="DecTotalWork" Grid.Row="9" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+
+				</Grid>
+			</GroupBox>
+
+
+		</Grid>
+
+		<Canvas Grid.Column="3" Grid.Row="0" Background="LightGreen">
+			<TextBlock>Правая панель</TextBlock>
+		</Canvas>
 	</Grid>
 
 </Window>

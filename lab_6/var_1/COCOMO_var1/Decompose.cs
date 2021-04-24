@@ -16,14 +16,14 @@
 		public double QaWork { get => workTotal * qaCoef; }
 		public double ManualWork { get => workTotal * manualCoef; }
 
-		private const double analysisCoef = .4;
+		private const double analysisCoef = .04;
 		private const double projectingCoef = .12;
 		private const double programmingCoef = .44;
-		private const double testingCoef = .6;
+		private const double testingCoef = .06;
 		private const double verificationCoef = .14;
-		private const double chancelleryCoef = .7;
-		private const double qaCoef = .7;
-		private const double manualCoef = .6;
+		private const double chancelleryCoef = .07;
+		private const double qaCoef = .07;
+		private const double manualCoef = .06;
 
 		public Decompose(double workTotal)
 		{

@@ -1,26 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 using COCOMO.Attributes;
 
 namespace COCOMO_var1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
     {
         public MainWindow()
         {
@@ -127,7 +115,7 @@ namespace COCOMO_var1
             var testPeople = Math.Ceiling(testWork / testTime);
 
 
-            
+            /*
             allWork.Text = (work + overWork).ToString("n2");
             allTime.Text = (time + overTime).ToString("n2");
 
@@ -145,21 +133,22 @@ namespace COCOMO_var1
             intTime.Text = testTime.ToString("n2");
 
             this.overWork.Text = overWork.ToString("n2");
-            this.overTime.Text = overTime.ToString("n2");
+            this.overTime.Text = overTime.ToString("n2");*/
 
             // Декомпозиция работ по созданию ПО
             var decompose = new Decompose(work);
 
-            AnaticsWork.Text = decompose.AnalysisWork.ToString("n2");
-            projectWork.Text = decompose.ProjectingWork.ToString("n2");
-            programmingWork.Text = decompose.ProgrammingWork.ToString("n2");
-            this.testWork.Text = decompose.TestingWork.ToString("n2");
-            verificationWork.Text = decompose.VerificationWork.ToString("n2");
-            kazlerWork.Text = decompose.ChancelleryWork.ToString("n2");
-            QAWork.Text = decompose.QaWork.ToString("n2");
-            manWork.Text = decompose.ManualWork.ToString("n2");
+            DecAnalysisWork.Text = decompose.AnalysisWork.ToString("n2");
+            DecProjectingWork.Text = decompose.ProjectingWork.ToString("n2");
+            DecProgrammingWork.Text = decompose.ProgrammingWork.ToString("n2");
+            DecTestingWork.Text = decompose.TestingWork.ToString("n2");
+            DecVerificationWork.Text = decompose.VerificationWork.ToString("n2");
+            DecChancelleryWork.Text = decompose.ChancelleryWork.ToString("n2");
+            DecQaWork.Text = decompose.QaWork.ToString("n2");
+            DecManualWork.Text = decompose.ManualWork.ToString("n2");
+            DecTotalWork.Text = work.ToString("n2");
 
-
+            /*
             var workersData = new ColumnSeries
             {
                 Title = "Проект 1",
@@ -171,7 +160,7 @@ namespace COCOMO_var1
                 workersData
             };
 
-            Workres.Series = workersSeries;
+            Workres.Series = workersSeries;*/
         }
     }
 }
