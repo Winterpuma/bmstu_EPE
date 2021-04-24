@@ -60,7 +60,7 @@ namespace COCOMO_var1
         }
         
         private void Button_Click(object sender, RoutedEventArgs e)
-        {/*
+        {
             var kloc = Int32.Parse(KLOC.Text);
 
             var rely = Product.RELY(Int32.Parse(RELY.Text));
@@ -122,7 +122,7 @@ namespace COCOMO_var1
             var caWork = work * .7;
             var qaWork = work * .7;
             var maWork = work * .6;
-
+            /*
             allWork.Text = (work + overWork).ToString("n2");
             allTime.Text = (time + overTime).ToString("n2");
 
