@@ -27,14 +27,14 @@ namespace COCOMO_var1
             InitializeComponent();
         }
 
-        public static double c1, c2, p1, p2;
+        public double c1, c2, p1, p2;
 
         /// <summary>
-        /// 
+        /// Режимы модели
         /// </summary>
-        static void SetConst(int kloc)
+        void SetConst(int kloc)
         {
-
+            // Обычный
             if (kloc < 50)
             {
                 c1 = 3.2;
@@ -42,14 +42,15 @@ namespace COCOMO_var1
                 c2 = 2.5;
                 p2 = 0.38;
             }
-            else
-            if (kloc < 500)
+            // Промежуточный
+            else if (kloc <= 500)
             {
                 c1 = 3;
                 p1 = 1.12;
                 c2 = 2.5;
                 p2 = 0.35;
             }
+            // Встроенный
             else
             {
                 c1 = 2.8;
@@ -58,9 +59,13 @@ namespace COCOMO_var1
                 p2 = 0.32;
             }
         }
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+
+        /// <summary>
+        /// Результат учета 15 уточняющих факторов
+        /// </summary>
+        /// <returns>EAF</returns>
+        private double CountEAF()
+		{
             var kloc = Int32.Parse(KLOC.Text);
 
             var rely = Product.RELY(Int32.Parse(RELY.Text));
@@ -77,52 +82,52 @@ namespace COCOMO_var1
             var pcap = Personnel.PCAP(Int32.Parse(PCAP.Text));
             var vexp = Personnel.VEXP(Int32.Parse(VEXP.Text));
             var lexp = Personnel.LEXP(Int32.Parse(LEXP.Text));
-            
+
             var modp = Project.MODP(Int32.Parse(MODP.Text));
             var tool = Project.TOOL(Int32.Parse(TOOL.Text));
             var sced = Project.SCED(Int32.Parse(SCED.Text));
 
             SetConst(kloc);
 
-            var eaf = rely * data * cplx * time * stor * virt * turn * acap * aexp * pcap * vexp * lexp * modp * tool * sced;
+            return rely * data * cplx * time * stor * virt * turn * acap * aexp * pcap * vexp * lexp * modp * tool * sced;
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var kloc = Int32.Parse(KLOC.Text);
 
+            var eaf = CountEAF();
 
             var work = c1 * eaf * Math.Pow(kloc, p1);
-            time = c2 * Math.Pow(work, p2);
+            var time = c2 * Math.Pow(work, p2);
 
+            // Планирование и определение требований 
             var overWork = work * .08;
             var overTime = time * .36;
             var overPeople = Math.Ceiling(overWork / overTime);
 
+            // Проектирование продукта 
             var projWork = work * .18;
             var projTime = time * .36;
             var proPeople = Math.Ceiling(projWork / projTime);
 
+            // Детальное проектирование 
             var detProjWork = work * .25;
             var detProjTime = time * .18;
             var detProPeople = Math.Ceiling(detProjWork / detProjTime);
 
-
+            // Кодирование и тестирование отдельных модулей
             var codeWork = work * .25;
             var codeTime = time * .18;
             var codePeople = Math.Ceiling(codeWork / codeTime);
 
-
+            // Интеграция и тестирование
             var testWork = work * .31;
             var testTime = time * .28;
             var testPeople = Math.Ceiling(testWork / testTime);
 
 
-
-            var anWork = work * .4;
-            var prWork = work * .12;
-            var pgWork = work * .44;
-            var teWork = work * .6;
-            var veWork = work * .14;
-            var caWork = work * .7;
-            var qaWork = work * .7;
-            var maWork = work * .6;
-            /*
+            
             allWork.Text = (work + overWork).ToString("n2");
             allTime.Text = (time + overTime).ToString("n2");
 
@@ -142,14 +147,17 @@ namespace COCOMO_var1
             this.overWork.Text = overWork.ToString("n2");
             this.overTime.Text = overTime.ToString("n2");
 
-            AnaticsWork.Text = anWork.ToString("n2");
-            projectWork.Text = prWork.ToString("n2");
-            programmingWork.Text = pgWork.ToString("n2");
-            this.testWork.Text = teWork.ToString("n2");
-            verificationWork.Text = veWork.ToString("n2");
-            kazlerWork.Text = caWork.ToString("n2");
-            QAWork.Text = qaWork.ToString("n2");
-            manWork.Text = maWork.ToString("n2");
+            // Декомпозиция работ по созданию ПО
+            var decompose = new Decompose(work);
+
+            AnaticsWork.Text = decompose.AnalysisWork.ToString("n2");
+            projectWork.Text = decompose.ProjectingWork.ToString("n2");
+            programmingWork.Text = decompose.ProgrammingWork.ToString("n2");
+            this.testWork.Text = decompose.TestingWork.ToString("n2");
+            verificationWork.Text = decompose.VerificationWork.ToString("n2");
+            kazlerWork.Text = decompose.ChancelleryWork.ToString("n2");
+            QAWork.Text = decompose.QaWork.ToString("n2");
+            manWork.Text = decompose.ManualWork.ToString("n2");
 
 
             var workersData = new ColumnSeries
@@ -163,7 +171,7 @@ namespace COCOMO_var1
                 workersData
             };
 
-            Workres.Series = workersSeries;*/
+            Workres.Series = workersSeries;
         }
     }
 }
