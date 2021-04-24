@@ -115,25 +115,27 @@ namespace COCOMO_var1
             var testPeople = Math.Ceiling(testWork / testTime);
 
 
-            /*
-            allWork.Text = (work + overWork).ToString("n2");
-            allTime.Text = (time + overTime).ToString("n2");
 
+            LiCyPlannig.Text = overWork.ToString("n2");
+            LiCyPlannigTime.Text = overTime.ToString("n2");
 
-            planWork.Text = projWork.ToString("n2");
-            planTime.Text = time.ToString("n2");
+            LiCyProjecting.Text = projWork.ToString("n2");
+            LiCyProjectingTime.Text = time.ToString("n2");
 
-            detWork.Text = detProjWork.ToString("n2");
-            detTime.Text = detProjTime.ToString("n2");
+            LiCyDetailedProjecting.Text = detProjWork.ToString("n2");
+            LiCyDetailedProjectingTime.Text = detProjTime.ToString("n2");
 
-            codingWork.Text = codeWork.ToString("n2");
-            codingTime.Text = codeTime.ToString("n2");
+            LiCyCoding.Text = codeWork.ToString("n2");
+            LiCyCodingTime.Text = codeTime.ToString("n2");
 
-            intWork.Text = testWork.ToString("n2");
-            intTime.Text = testTime.ToString("n2");
+            LiCyIntegration.Text = testWork.ToString("n2");
+            LiCyIntegrationTime.Text = testTime.ToString("n2");
 
-            this.overWork.Text = overWork.ToString("n2");
-            this.overTime.Text = overTime.ToString("n2");*/
+            LiCyTotal.Text = work.ToString("n2");
+            LiCyTotalTime.Text = time.ToString("n2");
+
+            LiCyAll.Text = (work + overWork).ToString("n2");
+            LiCyAllTime.Text = (time + overTime).ToString("n2");
 
             // Декомпозиция работ по созданию ПО
             var decompose = new Decompose(work);

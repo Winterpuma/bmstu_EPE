@@ -12,10 +12,8 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition MinWidth="300" />
 			<ColumnDefinition MinWidth="20" />
-			<ColumnDefinition Width="Auto" MinWidth="400" />
-			<ColumnDefinition Width="46*" />
+			<ColumnDefinition Width="Auto" MinWidth="600" />
 		</Grid.ColumnDefinitions>
-
 
 		<Grid x:Name="Attributes">
 			<Grid.RowDefinitions>
@@ -167,7 +165,82 @@
 				<RowDefinition Height="2*"/>
 			</Grid.RowDefinitions>
 
-			<GroupBox Header="Декомпозиция работ по созданию ПО" Grid.Column="0" Grid.Row="0" >
+			<GroupBox Header="Распределение работ и времени по стадиям жизненного цикла" Grid.Column="0" Grid.Row="0" >
+				<Grid Margin="1 5">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" MinWidth="45" />
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition Width="10*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="10*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="10*"/>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="10*"/>
+					</Grid.ColumnDefinitions>
+
+					<TextBlock Grid.Row="0" Grid.Column="0">Вид деятельности</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="2">Трудозатраты(%)</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="4">Значение</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="6">Время(%)</TextBlock>
+					<TextBlock Grid.Row="0" Grid.Column="8">Значение</TextBlock>
+
+					<TextBlock Grid.Row="1" Grid.Column="0">Планирование и определение требований</TextBlock>
+					<TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">(+8)</TextBlock>
+					<TextBlock x:Name="LiCyPlannig" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="1" Grid.Column="6" HorizontalAlignment="Center">(+36)</TextBlock>
+					<TextBlock x:Name="LiCyPlannigTime" Grid.Row="1" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="2" Grid.Column="0">Проектирование продукта</TextBlock>
+					<TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">18</TextBlock>
+					<TextBlock x:Name="LiCyProjecting" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="2" Grid.Column="6" HorizontalAlignment="Center">36</TextBlock>
+					<TextBlock x:Name="LiCyProjectingTime" Grid.Row="2" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="3" Grid.Column="0">Детальное проектирование</TextBlock>
+					<TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">25</TextBlock>
+					<TextBlock x:Name="LiCyDetailedProjecting" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="3" Grid.Column="6" HorizontalAlignment="Center">18</TextBlock>
+					<TextBlock x:Name="LiCyDetailedProjectingTime" Grid.Row="3" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="4" Grid.Column="0">Кодирование и тестирование отдельных модулей</TextBlock>
+					<TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">26</TextBlock>
+					<TextBlock x:Name="LiCyCoding" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="4" Grid.Column="6" HorizontalAlignment="Center">18</TextBlock>
+					<TextBlock x:Name="LiCyCodingTime" Grid.Row="4" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="5" Grid.Column="0">Интеграция и тестирование</TextBlock>
+					<TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center">31</TextBlock>
+					<TextBlock x:Name="LiCyIntegration" Grid.Row="5" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="5" Grid.Column="6" HorizontalAlignment="Center">28</TextBlock>
+					<TextBlock x:Name="LiCyIntegrationTime" Grid.Row="5" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="6" Grid.Column="0">Итого</TextBlock>
+					<TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">100</TextBlock>
+					<TextBlock x:Name="LiCyTotal" Grid.Row="6" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="6" Grid.Column="6" HorizontalAlignment="Center">100</TextBlock>
+					<TextBlock x:Name="LiCyTotalTime" Grid.Row="6" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+
+					<TextBlock Grid.Row="7" Grid.Column="0">Итого + планирование</TextBlock>
+					<TextBlock Grid.Row="7" Grid.Column="2" HorizontalAlignment="Center">108</TextBlock>
+					<TextBlock x:Name="LiCyAll" Grid.Row="7" Grid.Column="4" HorizontalAlignment="Center"></TextBlock>
+					<TextBlock Grid.Row="7" Grid.Column="6" HorizontalAlignment="Center">136</TextBlock>
+					<TextBlock x:Name="LiCyAllTime" Grid.Row="7" Grid.Column="8" HorizontalAlignment="Center"></TextBlock>
+				</Grid>
+			</GroupBox>
+
+			<GroupBox Header="Декомпозиция работ по созданию ПО" Grid.Column="0" Grid.Row="1" >
 				<Grid Margin="1 5">
 					<Grid.RowDefinitions>
 						<RowDefinition/>
@@ -234,12 +307,7 @@
 				</Grid>
 			</GroupBox>
 
-
 		</Grid>
-
-		<Canvas Grid.Column="3" Grid.Row="0" Background="LightGreen">
-			<TextBlock>Правая панель</TextBlock>
-		</Canvas>
 	</Grid>
 
 </Window>
