@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-
+using System.Windows.Controls;
 using COCOMO.Attributes;
 
 namespace COCOMO_var1
@@ -48,11 +48,11 @@ namespace COCOMO_var1
             }
         }
 
-        /// <summary>
-        /// Результат учета 15 уточняющих факторов
-        /// </summary>
-        /// <returns>EAF</returns>
-        private double CountEAF()
+		/// <summary>
+		/// Результат учета 15 уточняющих факторов
+		/// </summary>
+		/// <returns>EAF</returns>
+		private double CountEAF()
 		{
             var kloc = Int32.Parse(KLOC.Text);
 
@@ -163,6 +163,24 @@ namespace COCOMO_var1
             };
 
             Workres.Series = workersSeries;*/
+        }
+
+        // PreviewKeyDown is where you preview the key.
+        // Do not put any logic here, instead use the
+        // KeyDown event after setting IsInputKey to true.
+        private void TextBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            var textbox = (TextBox)sender;
+
+            switch (e.Key)
+            {
+                case System.Windows.Input.Key.Down:
+                    textbox.Text = (int.Parse(textbox.Text) - 1).ToString();
+                    break;
+                case System.Windows.Input.Key.Up:
+                    textbox.Text = (int.Parse(textbox.Text) + 1).ToString();
+                    break;
+            }
         }
     }
 }

@@ -10,9 +10,9 @@
 	<Grid x:Name="BasicGrid" Margin="20 10 20 10">
 
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition MinWidth="300" />
-			<ColumnDefinition MinWidth="20" />
-			<ColumnDefinition Width="Auto" MinWidth="600" />
+			<ColumnDefinition Width="300*" />
+			<ColumnDefinition Width="20*" />
+			<ColumnDefinition Width="600*" />
 		</Grid.ColumnDefinitions>
 
 		<Grid x:Name="Attributes">
@@ -40,13 +40,13 @@
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Row="0" Grid.Column="0">RELY (требуемая надежность)</TextBlock>
-					<TextBox x:Name="RELY" Grid.Row="0" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="RELY" Grid.Row="0" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="1" Grid.Column="0">DATA (размер базы данных)</TextBlock>
-					<TextBox x:Name="DATA" Grid.Row="1" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="DATA" Grid.Row="1" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="2" Grid.Column="0">CPLX (сложность продукта)</TextBlock>
-					<TextBox x:Name="CPLX" Grid.Row="2" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="CPLX" Grid.Row="2" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 				</Grid>
 			</GroupBox>
@@ -67,16 +67,16 @@
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Row="0" Grid.Column="0">TIME (огр. времени выполнения)</TextBlock>
-					<TextBox x:Name="TIME" Grid.Row="0" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="TIME" Grid.Row="0" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="1" Grid.Column="0">STOR (огр. объема осн. памяти)</TextBlock>
-					<TextBox x:Name="STOR" Grid.Row="1" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="STOR" Grid.Row="1" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="2" Grid.Column="0">VIRT (изменивость ВМ)</TextBlock>
-					<TextBox x:Name="VIRT" Grid.Row="2" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="VIRT" Grid.Row="2" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="3" Grid.Column="0">TURN (время реации компьютера)</TextBlock>
-					<TextBox x:Name="TURN" Grid.Row="3" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="TURN" Grid.Row="3" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 				</Grid>
 			</GroupBox>
@@ -98,19 +98,19 @@
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Row="0" Grid.Column="0">ACAP (способности аналитика)</TextBlock>
-					<TextBox x:Name="ACAP" Grid.Row="0" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="ACAP" Grid.Row="0" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="1" Grid.Column="0">AEXP (знание приложений)</TextBlock>
-					<TextBox x:Name="AEXP" Grid.Row="1" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="AEXP" Grid.Row="1" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="2" Grid.Column="0">PCAP (способности программиста)</TextBlock>
-					<TextBox x:Name="PCAP" Grid.Row="2" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="PCAP" Grid.Row="2" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="3" Grid.Column="0">VEXP (знание ВМ)</TextBlock>
-					<TextBox x:Name="VEXP" Grid.Row="3" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="VEXP" Grid.Row="3" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="4" Grid.Column="0">LEXP (знание ЯП)</TextBlock>
-					<TextBox x:Name="LEXP" Grid.Row="4" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="LEXP" Grid.Row="4" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 				</Grid>
 			</GroupBox>
@@ -130,13 +130,13 @@
 					</Grid.ColumnDefinitions>
 
 					<TextBlock Grid.Row="0" Grid.Column="0">MODP (исп. современных методов)</TextBlock>
-					<TextBox x:Name="MODP" Grid.Row="0" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="MODP" Grid.Row="0" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="1" Grid.Column="0">TOOL (исп. программных инструментов)</TextBlock>
-					<TextBox x:Name="TOOL" Grid.Row="1" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="TOOL" Grid.Row="1" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 					<TextBlock Grid.Row="2" Grid.Column="0">SCED (требуемые сроки разработки)</TextBlock>
-					<TextBox x:Name="SCED" Grid.Row="2" Grid.Column="2">1</TextBox>
+					<TextBox x:Name="SCED" Grid.Row="2" Grid.Column="2" PreviewKeyUp="TextBox_PreviewKeyDown">0</TextBox>
 
 				</Grid>
 			</GroupBox>
