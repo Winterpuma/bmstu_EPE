@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using COCOMO.Attributes;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace COCOMO_var1
 {
@@ -16,6 +18,7 @@ namespace COCOMO_var1
         }
 
         public double c1, c2, p1, p2;
+        private const double Money = 60; // ЗП кило рублей
 
         /// <summary>
         /// Режимы модели
@@ -150,10 +153,22 @@ namespace COCOMO_var1
             DecManualWork.Text = decompose.ManualWork.ToString("n2");
             DecTotalWork.Text = work.ToString("n2");
 
-            /*
+            // Заполняем деньги
+            DecAnalysisMoney.Text = (decompose.AnalysisWork * Money).ToString("n2");
+            DecProjectingMoney.Text = (decompose.ProjectingWork * Money).ToString("n2");
+            DecProgrammingMoney.Text = (decompose.ProgrammingWork * Money).ToString("n2");
+            DecTestingMoney.Text = (decompose.TestingWork * Money).ToString("n2");
+            DecVerificationMoney.Text = (decompose.VerificationWork * Money).ToString("n2");
+            DecChancelleryMoney.Text = (decompose.ChancelleryWork * Money).ToString("n2");
+            DecQaMoney.Text = (decompose.QaWork * Money).ToString("n2");
+            DecManualMoney.Text = (decompose.ManualWork * Money).ToString("n2");
+            DecTotalMoney.Text = (work * Money).ToString("n2");
+
+
+            // График
             var workersData = new ColumnSeries
             {
-                Title = "Проект 1",
+                Title = "1",
                 Values = new ChartValues<double> { overPeople, proPeople, detProPeople, codePeople, testPeople }
             };
 
@@ -162,7 +177,7 @@ namespace COCOMO_var1
                 workersData
             };
 
-            Workres.Series = workersSeries;*/
+            Workres.Series = workersSeries;
         }
 
         // PreviewKeyDown is where you preview the key.
