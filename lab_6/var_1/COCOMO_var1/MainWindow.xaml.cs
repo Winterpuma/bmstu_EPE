@@ -197,5 +197,11 @@ namespace COCOMO_var1
                     break;
             }
         }
+
+        private void ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            Graphs subWindow = new Graphs();
+            subWindow.Show();
+        }
     }
 }
